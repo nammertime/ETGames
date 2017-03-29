@@ -1,0 +1,2 @@
+class ProductEsrb < ApplicationRecord
+end

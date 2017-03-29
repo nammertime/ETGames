@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ETGames</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= form_tag '/media_contents', method: :post, class: "dropzone", id: "media-dropzone" do %>
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+      <div class="fallback">
+        <%= file_field_tag "media", multiple: true%>
+      </div>
+    <% end %>
+
+<%= yield %>
+
+  </body>
+</html>
