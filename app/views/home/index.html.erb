@@ -1,52 +1,12 @@
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-
-                <%= link_to "Home", home_path(), class: "navbar-brand" %></a>
-
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                          <%= link_to "About", about_path(), class: "navbar-brand" %></a>
-                    </li>
-                    <li>
-                          <%= link_to "Contact", contact_path(), class: "navbar-brand" %></a>
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-                        <%= link_to "Sign In", contact_path(), class: "navbar-brand" %></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
-            <div class="col-md-3">
-                <p class="lead">ET - GAMES</p>
-                <div class="list-group">
+            <div class="col-md-3" >
+                <p class="lead">  <img src="img/logo/ET.png" alt=""></p>
+                <div class="list-group" >
 
 
                     <% @genre.each do |type| %>
@@ -60,12 +20,53 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-9" >
 
-</br>
-</br>
-</br>
+              <img src="img/banners/top_banner.jpg" alt="">
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <div class="input-group-btn search-panel">
+                      <div class="dropdown">
+                        <select name="genre" id="genre" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <option value="Genre">Genre</option>
+                            <option value="Action">Action</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Strategy">Strategy</option>
+                            <option value="MMO">MMO</option>
+                            <option value="RPG">RPG</option>
+                            <option value="FPS">FPS</option>
+                            <option value="RTS">RTS</option>
+                            <option value="Fighting">Fighting</option>
+                            <option value="Racing">Racing</option>
+                            <option value="Simulation">Simulation</option></select>
+                        </select>
+                      </div>
+                    </div>
+
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input type="text" class="form-control" name="x" placeholder="Search term...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
               <div class="row">
+
+
                 <div class="col-md-6">
 
                 <%= form_tag("/search", method: "get") do %>
@@ -84,6 +85,8 @@
 <div class="row carousel-holder">
 
     <div class="col-md-12">
+
+
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -117,8 +120,8 @@
   <% @game.each do |poke| %>
 
 
-  <div class="col-sm-4 col-lg-4 col-md-4">
-      <div class="thumbnail">
+  <div class="col-sm-4 col-lg-4 col-md-4" >
+      <div class="thumbnail" style="background-color: #d3d3d3">
           <img src="img/<%= poke.ProductImage %>.jpg" alt="" height="200">
           <div class="caption">
               <h4 class="pull-right">$<%= poke.ProductPrice %></h4>
