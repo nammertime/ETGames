@@ -40,6 +40,7 @@ gem "fog"
 gem 'paperclip'
 gem 'activeadmin', github: 'activeadmin'
 gem 'dropzonejs-rails'
+gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

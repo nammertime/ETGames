@@ -4,8 +4,11 @@ class HomeController < ApplicationController
 
   def index
 @upload = Upload.new
-@game = Game.all();
+#@game = Game.all();
 @genre = GameGenre.all();
+
+@game = Game.all().page(params[:page]).per(6)
+
 
   end
 
@@ -46,7 +49,7 @@ class HomeController < ApplicationController
     @params = params[:q]
 
   #  @game = Game.where(:ProductGenreID => @params)
-    @game = Game.where("ProductName like ?", "%"+@params+"%")
+    @game = Game.where("ProductName like ?", "%"+@params+"%").page(params[:page]).per(6)
     #('ProductName LIKE #{@params}%')
   #  .where("name like ?", "%yson%")
     #Game.find_by(ProductName: @params)
@@ -57,9 +60,9 @@ class HomeController < ApplicationController
 @genreParams = params['genre']
 
 if @genreParams == "Genre"
-  @game = Game.where("ProductName like ?", "%"+@params+"%")
+  @game = Game.where("ProductName like ?", "%"+@params+"%").page(params[:page]).per(6)
 else
-   @game = Game.where("ProductName like ? AND ProductGenreID like ?", "%"+@params+"%", "%"+@genreParams+"%")
+   @game = Game.where("ProductName like ? AND ProductGenreID like ?", "%"+@params+"%", "%"+@genreParams+"%").page(params[:page]).per(6)
 end
 
 
