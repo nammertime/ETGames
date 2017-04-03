@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  CustomerID: 
+  FirstName: 
+  LastName: 
+  UserName: 
+  Password: 
+  Address: 
+  City: 
+  PostalCode: 
+  Phone: 
+  Email: MyString
+  Province: 
+
+two:
+  CustomerID: 
+  FirstName: 
+  LastName: 
+  UserName: 
+  Password: 
+  Address: 
+  City: 
+  PostalCode: 
+  Phone: 
+  Email: MyString
+  Province: 
