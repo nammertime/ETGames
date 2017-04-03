@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+     <%= form_for(@user, url: signup_path) do |f| %>
+
+
+      <%= f.label :FirstName %>
+      <%= f.text_field :FirstName , class: 'form-control' %>
+
+<p></p>
+
+      <%= f.label :LastName %>
+      <%= f.text_field :LastName, class: 'form-control' %>
+<p></p>
+      <%= f.label :UserName %>
+      <%= f.text_field :UserName %>
+<p></p>
+      <%= f.label :Password %>
+      <%= f.password_field :Password %>
+<p></p>
+      <%= f.label :Address %>
+      <%= f.text_field :Address %>
+<p></p>
+      <%= f.label :City %>
+      <%= f.text_field :City %>
+<p></p>
+      <%= f.label :PostalCode %>
+      <%= f.text_field :PostalCode %>
+<p></p>
+      <%= f.label :Phone %>
+      <%= f.text_field :Phone %>
+<p></p>
+      <%= f.label :Email %>
+      <%= f.email_field :Email %>
+<p></p>
+      <%= f.label :Province %>
+      <%= f.text_field :Province %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

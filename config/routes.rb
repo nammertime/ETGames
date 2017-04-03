@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   #devise_for :users
   resources :images
 resources :uploads
@@ -24,6 +26,17 @@ get '/genre/:genre' => 'home#genre' , as: 'genre'
 #get '/search/:word' => 'home#search' , as: 'search'
 
 get '/search' => 'home#search'
+
+
+
+
+
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+delete '/logout' => 'sessions#destroy'
+ get  '/signup',  to: 'customer#new'
+ post '/signup',  to: 'customer#create'
+resources :customers
 
   root 'home#index'
 
