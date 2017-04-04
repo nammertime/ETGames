@@ -37,10 +37,13 @@ class HomeController < ApplicationController
   end
 
   def about
+
+    @content = About.all
   end
 
   def contact
     @upload = Upload.new
+    @content = Contact.all
   end
 
 

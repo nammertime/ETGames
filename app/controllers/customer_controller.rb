@@ -8,6 +8,9 @@ class CustomerController < ApplicationController
 
       @user = Customer.new
 
+      @provinces = Province.all
+
+
     end
 
     def create
@@ -17,7 +20,7 @@ class CustomerController < ApplicationController
 
 
     #  @user = Customer.create(CustomerID:, FirstName:, LastName:, UserName:, Password:, Address:, City:, PostalCode:, Phone:, Email:, Province:)
-
+      @province = params[:Province]
       @user = Customer.create(user_params)
     #  Customer.create(CustomerID: '', FirstName: , LastName: 'M', UserName: 'Prey', Password: 'Prey', Address: "@", City: "", PostalCode: '8', Phone: "1234567890", Email: "123@yahoo.ca", Province: "3" )
 

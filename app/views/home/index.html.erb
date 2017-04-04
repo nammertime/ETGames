@@ -12,7 +12,7 @@
                     <% @genre.each do |type| %>
 
 
-<%= link_to type.GenreName.first(20), genre_path(type.GenreName), class: "list-group-item", style: "background-color: #352F90"%></a>
+<%= link_to type.GenreName.first(20), genre_path(type.GenreName), class: "list-group-item", style: "background-color: #222"%></a>
 
 
                     <% end %>
@@ -28,8 +28,6 @@
       </br>
     </br>
   </br>
-
-
 
         <div class="row">
             <div class="col-md-12">
@@ -127,7 +125,7 @@
 
 
   <div class="col-sm-4 col-lg-4 col-md-4" >
-      <div class="thumbnail" style="background-color: #352F90">
+      <div class="thumbnail" style="background-color: #222">
           <img src="img/<%= poke.ProductImage %>.jpg" alt="" height="200">
           <div class="caption">
               <h4 class="pull-right">$<%= poke.ProductPrice %></h4>

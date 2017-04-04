@@ -1,44 +1,55 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
+<div class="container">
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-4">
      <%= form_for(@user, url: signup_path) do |f| %>
-
 
       <%= f.label :FirstName %>
       <%= f.text_field :FirstName , class: 'form-control' %>
 
-<p></p>
-
       <%= f.label :LastName %>
       <%= f.text_field :LastName, class: 'form-control' %>
-<p></p>
+
       <%= f.label :UserName %>
-      <%= f.text_field :UserName %>
-<p></p>
-      <%= f.label :Password %>
-      <%= f.password_field :Password %>
-<p></p>
-      <%= f.label :Address %>
-      <%= f.text_field :Address %>
-<p></p>
-      <%= f.label :City %>
-      <%= f.text_field :City %>
-<p></p>
-      <%= f.label :PostalCode %>
-      <%= f.text_field :PostalCode %>
-<p></p>
-      <%= f.label :Phone %>
-      <%= f.text_field :Phone %>
-<p></p>
+      <%= f.text_field :UserName, class: 'form-control' %>
+
       <%= f.label :Email %>
-      <%= f.email_field :Email %>
-<p></p>
-      <%= f.label :Province %>
-      <%= f.text_field :Province %>
+      <%= f.email_field :Email, class: 'form-control' %>
+
+      <%= f.label :Password %>
+      <%= f.password_field :Password, class: 'form-control' %>
+
+      <%= f.label :Address %>
+      <%= f.text_field :Address, class: 'form-control' %>
+
+      <%= f.label :City %>
+      <%= f.text_field :City, class: 'form-control' %>
+
+      <%= f.label :PostalCode %>
+      <%= f.text_field :PostalCode, class: 'form-control' %>
+
+      <%= f.label :Phone %>
+      <%= f.text_field :Phone, class: 'form-control' %>
+
+
+      <label for="customer_Province">Province</label>
+      <select name="customer[Province]" id="customer_Province">
+
+
+
+<% @provinces.each do |prov| %>
+
+  <option value="<%= prov.Name %>"><%= prov.Name %></option>
+
+    <% end %>
+
+</select>
+
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
+</div>
 </div>

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403224815) do
+ActiveRecord::Schema.define(version: 20170403235046) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "Name"
+    t.text     "Desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -41,6 +48,13 @@ ActiveRecord::Schema.define(version: 20170403224815) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "Name"
+    t.text     "Desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -132,9 +146,11 @@ ActiveRecord::Schema.define(version: 20170403224815) do
 
   create_table "provinces", force: :cascade do |t|
     t.string   "Name"
-    t.float    "Tax"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "GST"
+    t.float    "PST"
+    t.float    "HST"
   end
 
   create_table "snippets", force: :cascade do |t|

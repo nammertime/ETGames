@@ -15,8 +15,22 @@
 
 #game4 = Game.create(ProductID: '', ProductGenreID: 'Action', ProductESRBID: 'M', ProductName: 'Prey', ProductPrice: 59.99, ProductSKU: "@", ProductDesc: "", ProductImage: '8', ProductStock: 50 )
 
+#province = Province.create(Name: 'Alberta', GST: '.05', PST: '0', HST: '0')
+#province = Province.create(Name: 'British Columbia', GST: '.05', PST: '.07', HST: '0')
+#province = Province.create(Name: 'Manitoba', GST: '.05', PST: '.08', HST: '0')
+#province = Province.create(Name: 'New Brunswick', GST: '0', PST: '0', HST: '.15')
+#province = Province.create(Name: 'Newfoundland and Labrador', GST: '0', PST: '0', HST: '.15')
+#province = Province.create(Name: 'Northwest Territories', GST: '.05', PST: '0', HST: '0')
+#province = Province.create(Name: 'NovaScotia', GST: '0', PST: '0', HST: '.15')
+#province = Province.create(Name: 'Nunavut', GST: '.05', PST: '0', HST: '0')
+#province = Province.create(Name: 'Ontario', GST: '0', PST: '0', HST: '.13')
+#province = Province.create(Name: 'Prince Edward Island', GST: '0', PST: '0', HST: '.15')
+##province = Province.create(Name: 'Quebec', GST: '.09975', PST: '.05', HST: '0')
+#province = Province.create(Name: 'Saskatchewan', GST: '.05', PST: '.05', HST: '0')
+#province = Province.create(Name: 'Yukon', GST: '.05', PST: '0', HST: '0')
 
-
+about = About.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
+about = Contact.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
 
 #Product.destroy_all
 
