@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403235046) do
+ActiveRecord::Schema.define(version: 20170405192200) do
 
   create_table "abouts", force: :cascade do |t|
     t.string   "Name"
@@ -151,6 +151,21 @@ ActiveRecord::Schema.define(version: 20170403235046) do
     t.float    "GST"
     t.float    "PST"
     t.float    "HST"
+  end
+
+  create_table "shopping_cart_items", force: :cascade do |t|
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.integer "quantity"
+    t.integer "item_id"
+    t.string  "item_type"
+    t.integer "price_cents",    default: 0,     null: false
+    t.string  "price_currency", default: "USD", null: false
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "snippets", force: :cascade do |t|

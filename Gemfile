@@ -41,6 +41,7 @@ gem 'paperclip'
 gem 'activeadmin', github: 'activeadmin'
 gem 'dropzonejs-rails'
 gem 'kaminari'
+gem 'acts_as_shopping_cart'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
