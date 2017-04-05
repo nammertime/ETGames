@@ -1,11 +1,10 @@
 class CustomerController < ApplicationController
-
     def show
       @user = Customer.find(params[:id])
     end
 
     def new
-
+    @genre = GameGenre.all();
       @user = Customer.new
 
       @provinces = Province.all
@@ -14,7 +13,7 @@ class CustomerController < ApplicationController
     end
 
     def create
-
+    @genre = GameGenre.all();
 
       #@user = Customer.new(CustomerID: "1", FirstName: params[:session][:FirstName])
 

@@ -3,13 +3,19 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([ name: 'Star Wars' ,  name: 'Lord of the Rings' ])
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
 
-#game1 = Product.create([{ ProductID: '1' }, { ProductGenreID: '1' }, { ProductESRBID: '10' }, { ProductName: 'Mass Effect : Andromeda' } , { ProductPrice: 59.99 }, { ProductSKU: "@" },
-#  { ProductDesc: "Mass Effect: takes you to the Andromeda galaxy, far beyond the Milky Way. There, you'll lead our fight for a new home in hostile territory - where WE are the aliens." }, { ProductImage: '1' }, { ProductStock: 50 }])
+game1 = Game.create( ProductID: '99' ,  ProductGenreID: 'RPG' ,  ProductESRBID: 'E' ,  ProductName: 'TEST 2'  ,  ProductPrice: 99.99 ,  ProductSKU: "@" ,
+   ProductDesc: "TEST DESC TEST DESC" ,  ProductImage: '100' ,  ProductStock: 50 )
+
+  game1 = Game.create( ProductID: '101' ,  ProductGenreID: 'RPG' ,  ProductESRBID: 'E' ,  ProductName: 'TEST 3'  ,  ProductPrice: 99.99 ,  ProductSKU: "@" ,
+     ProductDesc: "TEST DESC TEST DESC" ,  ProductImage: '100' ,  ProductStock: 50 )
+
+    game1 = Game.create( ProductID: '100' ,  ProductGenreID: 'RPG' ,  ProductESRBID: 'E' ,  ProductName: 'TEST 1'  ,  ProductPrice: 99.99 ,  ProductSKU: "@" ,
+       ProductDesc: "TEST DESC TEST DESC" ,  ProductImage: '100' ,  ProductStock: 50 )
 
 
 
@@ -29,16 +35,16 @@
 #province = Province.create(Name: 'Saskatchewan', GST: '.05', PST: '.05', HST: '0')
 #province = Province.create(Name: 'Yukon', GST: '.05', PST: '0', HST: '0')
 
-about = About.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
-about = Contact.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
+#about = About.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
+#about = Contact.create(Name: 'first', Desc: "THIS IS A MESS ABOUT THE PAGE THERE IS STUFF HERE BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH")
 
 #Product.destroy_all
 
 
-#genres = GameGenre.create([{ GenreID: 1, GenreName: 'Action' }, { GenreID: 2, GenreName: 'Adventure' }, { GenreID: 3, GenreName: 'MMO' }, { GenreID: 4, GenreName: 'Racing' }, { GenreID: 5, GenreName: 'RPG' },
-#  { GenreID: 6, GenreName: 'Simulation' } , { GenreID: 7, GenreName: 'Strategy' } , { GenreID: 8, GenreName: 'RTS' } , { GenreID: 9, GenreName: 'FPS' }, { GenreID: 10, GenreName: 'Fighting' } ])
+#genres = GameGenre.create([ GenreID: 1, GenreName: 'Action' ,  GenreID: 2, GenreName: 'Adventure' ,  GenreID: 3, GenreName: 'MMO' ,  GenreID: 4, GenreName: 'Racing' ,  GenreID: 5, GenreName: 'RPG' ,
+#   GenreID: 6, GenreName: 'Simulation'  ,  GenreID: 7, GenreName: 'Strategy'  ,  GenreID: 8, GenreName: 'RTS'  ,  GenreID: 9, GenreName: 'FPS' ,  GenreID: 10, GenreName: 'Fighting'  ])
 
-#image = Upload.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#image = Upload.create([ name: 'Star Wars' ,  name: 'Lord of the Rings' ])
 
 
 #winnipeg_customers = Game.where(:ProductGenreID => 'FPS')

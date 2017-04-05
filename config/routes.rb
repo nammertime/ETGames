@@ -15,6 +15,10 @@ resources :media_contents, only: [:create]
 
   get '/about' => 'home#about'
 
+  get '/sale' => 'home#sale'
+
+  get '/recent' => 'home#recent'
+
   get '/contact' => 'home#contact'
 
   #get '/detail' => 'home#detail'

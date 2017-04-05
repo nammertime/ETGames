@@ -12,6 +12,18 @@ class HomeController < ApplicationController
 
   end
 
+def sale
+  @genre = GameGenre.all();
+    @game = Game.where("ProductPrice < 25").page(params[:page]).per(6)
+end
+
+def recent
+  @genre = GameGenre.all();
+  #@game = Game.all()
+    @game = Game.order(id: :desc).limit(6).page(params[:page]).per(6)
+    #.where("created_at > 2017-03-01 00:00:00.000000").page(params[:page]).per(6)
+end
+
   def detail
 
 @params = params[:id]

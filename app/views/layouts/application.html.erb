@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html class="animated fadeIn">
 <head>
-  <meta charset="UTF-8">
-  <title>Multi-layered Parallax Illustration </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ETGames</title>
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
@@ -25,18 +24,24 @@
   <div class="navbar navbar-inverse navbar-fixed-left">
   <a class="navbar-brand" href="#">Brand</a>
   <ul class="nav navbar-nav">
-   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-     <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Sub Menu1</a></li>
-      <li><a href="#">Sub Menu2</a></li>
-      <li><a href="#">Sub Menu3</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Sub Menu4</a></li>
-      <li><a href="#">Sub Menu5</a></li>
+   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Genres <span class="caret"></span></a>
+     <ul class="dropdown-menu">
+       <% @genre.each do |type| %>
+
+       <li>
+         <%= link_to type.GenreName.first(20), genre_path(type.GenreName) %>
+       </li>
+
+
+       <% end %>
      </ul>
+   </li>
+   <li>
+     <%= link_to "sale", sale_path %>
    </li>
    <li><%= link_to "contact", contact_path %></li>
    <li><%= link_to "about", about_path %></li>
+       <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
    <% if logged_in? %>
      <li><%= link_to "Users", '#' %></li>
      <li class="dropdown">
@@ -57,6 +62,7 @@
      <li><%= link_to "Log in", login_path %></li>
    <% end %>
    </ul>
+ </form>
 </div>
 <div class="container">
  <div class="row">

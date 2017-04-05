@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+        @genre = GameGenre.all();
   end
 
   def create
