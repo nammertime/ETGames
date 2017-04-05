@@ -120,7 +120,13 @@
       <div class="thumbnail" style="background-color: #222">
           <img src="img/<%= poke.ProductImage %>.jpg" alt="" height="200">
           <div class="caption">
-              <h4 class="pull-right">$<%= poke.ProductPrice %></h4>
+              <h4 class="pull-right">
+
+                <%= button_to 'Call Action', detail_path(poke.ProductID), method: :get %>
+
+                                <%= button_to 'buy', {:controller => "shopping_carts", :action => "create", :game_id => poke.ProductID} , :method=>:post  %>
+
+                <button type="button" class="btn btn-success">$<%= poke.ProductPrice %></button></h4>
               <h4><%= link_to poke.ProductName.first(20), detail_path(poke.ProductID) %></a>
               </h4>
 

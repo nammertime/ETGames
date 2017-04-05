@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   @game = Game.all();
   @genre = GameGenre.all();
 
+
+
   end
 
 

@@ -9,6 +9,15 @@ class HomeController < ApplicationController
 
 @game = Game.all().page(params[:page]).per(6)
 
+  @cart = ShoppingCart.last;
+
+
+@items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
+
+
+
+
+
 
   end
 

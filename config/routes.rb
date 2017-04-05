@@ -13,6 +13,7 @@ resources :media_contents, only: [:create]
   ActiveAdmin.routes(self)
   get '/home' => 'home#index'
 
+
   get '/about' => 'home#about'
 
   get '/sale' => 'home#sale'
@@ -31,9 +32,12 @@ get '/genre/:genre' => 'home#genre' , as: 'genre'
 
 get '/search' => 'home#search'
 
+get 'clearCart' => 'shopping_carts#clear'
+get 'shopping_cart' => 'shopping_carts#new'
+post 'shopping_cart' => 'shopping_carts#create'
 
-
-
+resources :shopping_carts
+resources :shopping_cart_items
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'
