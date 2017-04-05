@@ -39,6 +39,9 @@
    <li>
      <%= link_to "sale", sale_path %>
    </li>
+   <li>
+     <%= link_to "Recent releases", recent_path %>
+   </li>
    <li><%= link_to "contact", contact_path %></li>
    <li><%= link_to "about", about_path %></li>
        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
@@ -60,6 +63,7 @@
      </li>
    <% else %>
      <li><%= link_to "Log in", login_path %></li>
+     <li><%= link_to "Sign Up", signup_path %></li>
    <% end %>
    </ul>
  </form>
