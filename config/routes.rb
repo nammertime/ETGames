@@ -32,6 +32,7 @@ get '/genre/:genre' => 'home#genre' , as: 'genre'
 
 get '/search' => 'home#search'
 
+post 'remove' => 'shopping_carts#remove'
 get 'clearCart' => 'shopping_carts#clear'
 post 'update' => 'shopping_carts#update'
 get 'shopping_cart' => 'shopping_carts#new'

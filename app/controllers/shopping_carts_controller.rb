@@ -19,6 +19,14 @@ items.save
    redirect_back(fallback_location: root_path)
 end
 
+def remove
+
+items = ShoppingCartItem.find(params[:product_id])
+  items.destroy
+  items.save
+    redirect_back(fallback_location: root_path)
+  end
+
 
 def new
 

@@ -39,11 +39,19 @@ end
 
 
 def sale
+  @cart = ShoppingCart.last;
+
+
+@items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
   @genre = GameGenre.all();
     @game = Game.where("ProductPrice < 25").page(params[:page]).per(6)
 end
 
 def recent
+  @cart = ShoppingCart.last;
+
+
+@items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
   @genre = GameGenre.all();
   #@game = Game.all()
     @game = Game.order(id: :desc).limit(6).page(params[:page]).per(6)
@@ -59,7 +67,10 @@ end
     @game = Game.where('ProductID =' + @params);
 @genre = GameGenre.all();
 
+@cart = ShoppingCart.last;
 
+
+@items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
 
 
 
@@ -71,22 +82,35 @@ end
 
     @game = Game.where(:ProductGenreID => @params)
     @genre = GameGenre.all();
+    @cart = ShoppingCart.last;
 
+
+  @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
   end
 
   def about
+    @cart = ShoppingCart.last;
+  @genre = GameGenre.all();
 
+  @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
     @content = About.all
   end
 
   def contact
     @upload = Upload.new
     @content = Contact.all
+    @cart = ShoppingCart.last;
+
+  @genre = GameGenre.all();
+  @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
   end
 
 
   def search
+    @cart = ShoppingCart.last;
 
+
+  @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
     @params = params[:q]
 
   #  @game = Game.where(:ProductGenreID => @params)

@@ -13,6 +13,10 @@ class CustomerController < ApplicationController
     end
 
     def create
+      @cart = ShoppingCart.last;
+
+
+      @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
     @genre = GameGenre.all();
 
       #@user = Customer.new(CustomerID: "1", FirstName: params[:session][:FirstName])

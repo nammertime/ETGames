@@ -2,9 +2,17 @@ class SessionsController < ApplicationController
 
   def new
         @genre = GameGenre.all();
+        @cart = ShoppingCart.last;
+
+
+      @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
   end
 
   def create
+    @cart = ShoppingCart.last;
+
+
+  @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
     user = Customer.find_by(UserName: params[:session][:username])
 
     if user.blank?
