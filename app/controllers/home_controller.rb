@@ -3,6 +3,11 @@ class HomeController < ApplicationController
   before_action :set_upload, only: [:show, :edit, :update, :destroy]
 
   def index
+
+    session['_my_session'] = "test";
+
+
+
 @upload = Upload.new
 #@game = Game.all();
 @genre = GameGenre.all();

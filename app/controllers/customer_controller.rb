@@ -9,6 +9,11 @@ class CustomerController < ApplicationController
 
       @provinces = Province.all
 
+      @cart = ShoppingCart.last;
+
+
+      @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
+
 
     end
 
