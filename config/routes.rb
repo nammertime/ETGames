@@ -33,8 +33,10 @@ get '/genre/:genre' => 'home#genre' , as: 'genre'
 get '/search' => 'home#search'
 
 get 'clearCart' => 'shopping_carts#clear'
+post 'update' => 'shopping_carts#update'
 get 'shopping_cart' => 'shopping_carts#new'
 post 'shopping_cart' => 'shopping_carts#create'
+get '/checkout' => 'home#checkout'
 
 resources :shopping_carts
 resources :shopping_cart_items

@@ -1,0 +1,42 @@
+
+
+<div class="container">
+<% @items.each do |stuff| %>
+
+<div class="row">
+
+  <%= form_for(:shopping_carts, url: update_path) do |f| %>
+  <div class="col-md-3" >
+    <li>
+      <%= stuff.item.ProductName %>
+    </li>
+  </div>
+  <div class="col-md-3" >
+    <li>
+      <%= stuff.item.ProductPrice %>
+    </li>
+  </div>
+  <div class="col-md-3" >
+    <li>
+      <%= stuff.quantity %>
+  <%= hidden_field_tag :item_id, stuff.id.to_s%>
+<%= text_field_tag :quantity, stuff.quantity %>
+
+    </li>
+  </div>
+  <%= f.submit "update", class: "btn btn-primary" %>
+</div>
+
+
+
+<% end %>
+
+
+
+<% end %>
+
+
+
+
+
+</div>

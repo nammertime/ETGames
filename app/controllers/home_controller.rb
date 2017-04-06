@@ -21,6 +21,23 @@ class HomeController < ApplicationController
 
   end
 
+def checkout
+    @genre = GameGenre.all();
+  @cart = ShoppingCart.last;
+
+
+@items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
+
+end
+
+def update
+
+
+end
+
+
+
+
 def sale
   @genre = GameGenre.all();
     @game = Game.where("ProductPrice < 25").page(params[:page]).per(6)
@@ -127,29 +144,10 @@ end
 
    # PATCH/PUT /uploads/1
    def update
-     if @upload.update(post_upload_params)
-       redirect_to @upload, notice: 'Upload attachment was successfully updated.'
-     else
-       render :edit
-     end
+
    end
 
-   # DELETE /uploads/1
-   def destroy
-     @upload.destroy
-     redirect_to uploads_url, notice: 'Upload was successfully destroyed.'
-   end
 
-   private
-     # Use callbacks to share common setup or constraints between actions.
-     def set_upload
-       @upload = Upload.find(params[:id])
-     end
-
-     # Never trust parameters from the scary internet, only allow the white list through.
-     def post_upload_params
-       params.require(:upload).permit(:name)
-     end
 
 
 end

@@ -122,8 +122,6 @@
           <div class="caption">
               <h4 class="pull-right">
 
-                <%= button_to 'Call Action', detail_path(poke.ProductID), method: :get %>
-
                                 <%= button_to 'buy', {:controller => "shopping_carts", :action => "create", :game_id => poke.ProductID} , :method=>:post  %>
 
                 <button type="button" class="btn btn-success">$<%= poke.ProductPrice %></button></h4>

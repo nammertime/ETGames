@@ -9,6 +9,16 @@ def create
 
 end
 
+def update
+items = ShoppingCartItem.find(params[:item_id])
+
+
+items.quantity = params[:quantity]
+items.save
+
+   redirect_back(fallback_location: root_path)
+end
+
 
 def new
 
@@ -19,6 +29,10 @@ def clear
 @cart = ShoppingCart.last
 @cart.clear
  redirect_back(fallback_location: root_path)
+end
+
+def checkout
+@cart = ShoppingCart.last
 end
 
 

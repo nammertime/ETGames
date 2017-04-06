@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def index
+  def home
 
   @game = Game.all();
   @genre = GameGenre.all();
