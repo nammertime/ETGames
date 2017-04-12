@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cartID: 
+  CustomerID: 
+  TaxRate: 
+  Total: 
+  subTotal: 
+
+two:
+  cartID: 
+  CustomerID: 
+  TaxRate: 
+  Total: 
+  subTotal: 
