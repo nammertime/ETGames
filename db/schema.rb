@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412163653) do
+ActiveRecord::Schema.define(version: 20170412193534) do
+
+  create_table "Orders", force: :cascade do |t|
+    t.integer  "ShoppingCart_id"
+    t.integer  "CustomerID"
+    t.float    "TaxRate"
+    t.float    "Total"
+    t.float    "subTotal"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "shopping_carts_id"
+  end
 
   create_table "abouts", force: :cascade do |t|
     t.string   "Name"
@@ -105,16 +116,6 @@ ActiveRecord::Schema.define(version: 20170412163653) do
 
   create_table "media", force: :cascade do |t|
     t.string   "file_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer  "cartID"
-    t.integer  "CustomerID"
-    t.float    "TaxRate"
-    t.float    "Total"
-    t.float    "subTotal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
