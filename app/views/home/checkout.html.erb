@@ -33,9 +33,10 @@
 
 <%= button_to 'remove', {:controller => "shopping_carts", :action => "remove", :product_id => stuff.id.to_s} , :method=>:post  %>
 
-
 <% end %>
 
+</br>
+<%= button_to 'CHECKOUT', {:controller => "shopping_carts", :action => "remove"} , :method=>:post  %>
 
 
 
