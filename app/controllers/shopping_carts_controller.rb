@@ -56,7 +56,7 @@ session[:province] = province
 
 
 
-order = Order.create(TaxRate: @provinceID.GST, Total: @cart.total, subTotal: @cart.total * (@provinceID.GST + 1), shopping_cart_id:@cart.id, customer_id: @current_user.id )
+order = Order.create(TaxRate: (@provinceID.GST + @provinceID.PST + @provinceID.HST), Total: @cart.total, subTotal: @cart.total * (@provinceID.GST + @provinceID.PST + @provinceID.HST + 1), shopping_cart_id:@cart.id, customer_id: @current_user.id )
 @cart = ShoppingCart.create
  redirect_back(fallback_location: root_path)
 end
