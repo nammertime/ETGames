@@ -25,7 +25,7 @@ menu :priority => 3
     column("Customer", :user, :sortable => :user_id)
     column("Total")                   {|order| number_to_currency order.subTotal }
   end
-
+#sho page
   show do
     panel "Invoice" do
       table_for(order.shopping_cart.shopping_cart_items) do |t|
