@@ -21,7 +21,7 @@ menu :priority => 3
   index do
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
     column("State")                   {|order| status_tag(order.state) }
-    column("Date", :checked_out_at)
+    column("Tax")  {|order| number_to_currency (order.total  - order.subTotal) }
     column("Customer", :user, :sortable => :user_id)
     column("Total")                   {|order| number_to_currency order.subTotal }
   end
