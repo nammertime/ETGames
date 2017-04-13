@@ -15,6 +15,9 @@ class SessionsController < ApplicationController
   @items = ShoppingCartItem.where('owner_id = '+ @cart.id.to_s);
     user = Customer.find_by(UserName: params[:session][:username])
 
+
+  @genre = GameGenre.all();
+
     if user.blank?
       flash[:danger] = 'username does not exist' # Not quite right!
       render 'new'
