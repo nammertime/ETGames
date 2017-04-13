@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412193534) do
-
-  create_table "Orders", force: :cascade do |t|
-    t.integer  "ShoppingCart_id"
-    t.integer  "CustomerID"
-    t.float    "TaxRate"
-    t.float    "Total"
-    t.float    "subTotal"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "shopping_carts_id"
-  end
+ActiveRecord::Schema.define(version: 20170413032251) do
 
   create_table "abouts", force: :cascade do |t|
     t.string   "Name"
@@ -118,6 +107,19 @@ ActiveRecord::Schema.define(version: 20170412193534) do
     t.string   "file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "CustomerID"
+    t.float    "TaxRate"
+    t.float    "Total"
+    t.float    "subTotal"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "shopping_cart_id"
+    t.integer  "customer_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["shopping_cart_id"], name: "index_orders_on_shopping_cart_id"
   end
 
   create_table "post_attachments", force: :cascade do |t|

@@ -1,5 +1,5 @@
 class ShoppingCartsController < ApplicationController
-
+include SessionsHelper
 def create
 
   @cart = ShoppingCart.last
@@ -42,6 +42,24 @@ end
 def checkout
 @cart = ShoppingCart.last
 end
+
+def processOrder
+@cart = ShoppingCart.last
+
+
+@current_user ||= Customer.find_by(UserName: session[:user_id])
+province = @current_user.Province
+
+@provinceID = Province.where(Name: province)
+
+session[:province] = province
+
+session[:tax] = @provinceID.Name
+
+order = Order.create(TaxRate: @provinceID.Gst, Total: @cart.total, SubTotal: @cart.total * (@provinceID.Gst.to_i + 1), shopping_cart_id:@cart.id, customer_id: @current_user.id )
+@cart = ShoppingCart.create
+end
+
 
 
 end

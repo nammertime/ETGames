@@ -16,7 +16,7 @@
 
 #    game1 = Game.create( ProductID: '100' ,  ProductGenreID: 'RPG' ,  ProductESRBID: 'E' ,  ProductName: 'TEST 1'  ,  ProductPrice: 99.99 ,  ProductSKU: "@" ,
        #ProductDesc: "TEST DESC TEST DESC" ,  ProductImage: '100' ,  ProductStock: 50 )
-seedOrder = Order.create(ShoppingCart_id: 12, CustomerID: 2, TaxRate: 13.00, Total: 119.98, subTotal: 135.58, shopping_carts_id: 12);
+seedOrder = Order.create(CustomerID: 2, TaxRate: 13.00, Total: 119.98, subTotal: 135.58, shopping_carts_id: 12);
 
 
 #game4 = Game.create(ProductID: '', ProductGenreID: 'Action', ProductESRBID: 'M', ProductName: 'Prey', ProductPrice: 59.99, ProductSKU: "@", ProductDesc: "", ProductImage: '8', ProductStock: 50 )
