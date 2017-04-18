@@ -85,7 +85,9 @@ end
 
     @params = params[:genre]
 
-    @game = Game.where(:ProductGenreID => @params)
+    @game = Game.where(:ProductGenreID => @params).page(params[:page]).per(6)
+
+
     @genre = GameGenre.all();
     @cart = ShoppingCart.last;
 

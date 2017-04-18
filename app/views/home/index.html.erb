@@ -21,15 +21,6 @@
     </br>
   </br>
 
-  <span><%= session['_my_session'] %></span>
-
-
-
-
-
-
-
-
 
               <div class="row">
 
@@ -94,9 +85,8 @@
           <div class="caption">
               <h4 class="pull-right">
 
-                                <%= button_to 'buy', {:controller => "shopping_carts", :action => "create", :game_id => poke.ProductID} , :method=>:post  %>
+                                <%= button_to 'Buy $' + poke.ProductPrice.to_s, {:controller => "shopping_carts", :action => "create", :game_id => poke.ProductID} , :method=>:post  %>
 
-                <button type="button" class="btn btn-success">$<%= poke.ProductPrice %></button></h4>
               <h4><%= link_to poke.ProductName.first(20), detail_path(poke.ProductID) %></a>
               </h4>
 
