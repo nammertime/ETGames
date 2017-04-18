@@ -48,10 +48,13 @@ def processOrder
 
 
 @current_user ||= Customer.find_by(UserName: session[:user_id])
-province = @current_user.Province
 
+
+
+if @current_user.Province != nil
+
+  province = @current_user.Province
 @provinceID = Province.where(Name: province).first()
-
 session[:province] = province
 
 
@@ -59,6 +62,14 @@ session[:province] = province
 order = Order.create(TaxRate: (@provinceID.GST + @provinceID.PST + @provinceID.HST), Total: @cart.total, subTotal: @cart.total * (@provinceID.GST + @provinceID.PST + @provinceID.HST + 1), shopping_cart_id:@cart.id, customer_id: @current_user.id )
 @cart = ShoppingCart.create
  redirect_back(fallback_location: root_path)
+ else
+   order = Order.create(TaxRate: 0.13, Total: @cart.total, subTotal: @cart.total * (1.13), shopping_cart_id:@cart.id, customer_id: 1 )
+   @cart = ShoppingCart.create
+    redirect_back(fallback_location: root_path)
+end
+
+
+
 end
 
 
