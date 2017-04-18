@@ -1,10 +1,19 @@
 class ChargesController < ApplicationController
   def new
+    order = Order.last()
+
+    @testValue = order.subTotal
 end
 
 def create
   # Amount in cents
-  @amount = 500
+order = Order.last()
+
+
+  @amount = order.subTotal
+
+@testValue = session[:total]
+
 
   customer = Stripe::Customer.create(
     :email => params[:stripeEmail],

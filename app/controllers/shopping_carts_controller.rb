@@ -24,7 +24,7 @@ def remove
 items = ShoppingCartItem.find(params[:product_id])
   items.destroy
   items.save
-    redirect_back(fallback_location: root_path)
+    redirect_to(fallback_location: root_path)
   end
 
 
@@ -61,11 +61,20 @@ session[:province] = province
 
 order = Order.create(TaxRate: (@provinceID.GST + @provinceID.PST + @provinceID.HST), Total: @cart.total, subTotal: @cart.total * (@provinceID.GST + @provinceID.PST + @provinceID.HST + 1), shopping_cart_id:@cart.id, customer_id: @current_user.id )
 @cart = ShoppingCart.create
- redirect_back(fallback_location: charges_path)
+
+
+session[:total] = @cart.total * (@provinceID.GST + @provinceID.PST + @provinceID.HST + 1)
+
+
+
+redirect_to new_charge_path
  else
    order = Order.create(TaxRate: 0.13, Total: @cart.total, subTotal: @cart.total * (1.13), shopping_cart_id:@cart.id, customer_id: 1 )
+
    @cart = ShoppingCart.create
-    redirect_back(fallback_location: charges_path)
+
+   session[:total] = @cart.total * (1.13)
+    redirect_to new_charge_path
 end
 
 
