@@ -43,6 +43,7 @@ gem 'dropzonejs-rails'
 gem 'kaminari'
 gem 'acts_as_shopping_cart'
 gem 'rubocop', require: false
+gem 'stripe'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

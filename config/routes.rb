@@ -39,7 +39,7 @@ get 'shopping_cart' => 'shopping_carts#new'
 post 'shopping_cart' => 'shopping_carts#create'
 get '/checkout' => 'home#checkout'
 post '/checkout' => 'shopping_carts#processOrder'
-
+resources :charges
 resources :shopping_carts
 resources :shopping_cart_items
 
