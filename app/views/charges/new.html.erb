@@ -5,11 +5,18 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
+
+    <div class ="container">
     <label class="amount">
-      <span>Amount: <%= @testValue %></span>
+      <span>Subtotal: <%= @testTotal %></span>
+    </br>
+            <span>Taxes: <%= @testTax %></span>
+            </br>
+      <span>Total: <%= @testValue %></span>
+      </br>
     </label>
   </article>
-
+</div>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Game purchase"

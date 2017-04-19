@@ -3,6 +3,8 @@ class ChargesController < ApplicationController
     order = Order.last()
 
     @testValue = order.subTotal
+    @testTax = (order.subTotal - order.Total).round(2)
+    @testTotal = order.Total
 end
 
 def create
@@ -10,9 +12,10 @@ def create
 order = Order.last()
 
 
-  @amount = order.subTotal
+  @amount = (order.subTotal * 100).to_i
 
-@testValue = session[:total]
+session[:total] = order.subTotal
+
 
 
   customer = Stripe::Customer.create(
